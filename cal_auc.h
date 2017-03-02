@@ -29,14 +29,8 @@ class AucCalculation {
 
     bool Run(const std::string& filepath);
 
-    void LoadModelData(const std::string& modelPath);
-
   private:
-    void Prediction(const std::string& filename, boost::atomic<int>* counter);
     float CalculateAuc();
-
-    void LoadModelDataFile(const std::string& modelfile, boost::atomic<int>* counter);
-    // float CalculateScore(Instance* instance) const;
 
     void MergeData();
     void DumpResult(float score);
