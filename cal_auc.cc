@@ -12,6 +12,7 @@
 #include <memory>
 #include <functional>
 #include "cal_auc.h"
+#include "stringprintf.hpp"
 namespace {
 inline void opendirectory(const std::string& filename, const std::string& fatherpath, std::vector<std::string>* filepath) {
     assert(filepath);
@@ -60,11 +61,13 @@ void AucCalculation::LoadPredictionData(FILE* file_pointer, std::atomic<int>* co
     int rank;
     if (score == 1) rank = binNum - 1;
     else rank = score * binNum;
+    mu_.lock();
     if (label == 1) {
       ctrClickInfo_->info[rank].Click += 1;
     } else {
       ctrClickInfo_->info[rank].nonClick += 1;
     }
+    mu_.unlock();
   }
   fclose(file_pointer);
   ++(*counter);
@@ -74,18 +77,21 @@ bool AucCalculation::Run(const std::string& filepath) {
     std::vector<std::string> subfiles;
     opendirectory(filepath, "", &subfiles);
     std::atomic<int> counter(0);
-    LOG(INFO) << "run prediction";
+    std::cout << "run prediction" << std::endl;
     for (size_t i = 0; i < subfiles.size(); ++i) {
+      std::cout << base_string::StringPrintf("subfiles[%d]=%s\n", i, subfiles[i].c_str());
       FILE* f = fopen(subfiles[i].c_str(), "r");
-      this->pool_.Submit(std::bind(&AucCalculation::LoadPredictionData, this, f, &counter));
+
+      // this->pool_.Submit(std::bind(&AucCalculation::LoadPredictionData, this, f, &counter));
+      this->LoadPredictionData(f, &counter);
       // this->Prediction(subfiles[i], &counter);
     }
     while (counter < subfiles.size()) {
         usleep(1000);
     }
-    LOG(INFO) << "merge prediction result";
+    std::cout << "merge prediction result" << std::endl;
     MergeData();
-    LOG(INFO) << "dump result";
+    std::cout << "dump result";
     if (conf->GetMyRank() == 0) {
         this->DumpResult(CalculateAuc());
     }
@@ -99,10 +105,10 @@ void AucCalculation::DumpResult(float score) {
 void AucCalculation::MergeData() {
     assert(mpiPtr_);
     const int64_t clickInfoOffset = (sizeof(numClickInfos) + sizeof(ClickInfo) * conf->GetBinNum());
-    long long int offset = 0;
+    int offset = 0;
     mpiPtr_->WorkerMasterCommunication(
             ctrClickInfo_,
-            (sizeof(numClickInfos) + sizeof(ClickInfo) * ctrClickInfo_->num),
+            (int)(sizeof(numClickInfos) + sizeof(ClickInfo) * ctrClickInfo_->num),
             (void**)(&ctrClickInfoBuffer_),
             &offset
             );

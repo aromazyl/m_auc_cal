@@ -5,11 +5,9 @@
 #include "cal_auc.h"
 #include "mpi_base.h"
 
-DEFINE_string(model_path, "", "train model directory");
 DEFINE_string(data_path, "", "test data directory");
 DEFINE_int32(bin_number, 1000, "split bin numbers");
 DEFINE_int32(master_index, 0, "master index");
-// DEFINE_int64(block_size, 1000000, "single block size, byte");
 
 using namespace news_dl;
 using namespace LR;
@@ -21,17 +19,16 @@ int main(int argc, char* argv[]) {
     AucCalculationConf* conf = AucCalculationConf::GetSingletonPtr()
                 ->SetBinNum(FLAGS_bin_number)
                 ->SetMasterIdx(FLAGS_master_index)
-                ->SetScoreFilePath(FLAGS_data_path)
-                ->SetModelFilePath(FLAGS_model_path);
+                ->SetScoreFilePath(FLAGS_data_path);
                 // ->SetReadingBlockSize(FLAGS_block_size);
 
     std::shared_ptr<MpiBase> mpibase;
-    LOG(INFO) << "mpi init";
+    std::cout << "mpi init" << std::endl;
     mpibase.reset(new MpiBase(argc, argv));
-    LOG(INFO) << "auc calculation init";
+    std::cout << "auc calculation init" << std::endl;
     std::shared_ptr<AucCalculation> aucCalculation;
     aucCalculation.reset(new AucCalculation(mpibase));
-    LOG(INFO) << "run";
+    std::cout << "run" << std::endl;
     aucCalculation->Run(conf->GetScoreFilePath());
 
     return 0;

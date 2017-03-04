@@ -4,6 +4,7 @@
 #include <memory>
 #include <unordered_map>
 #include <atomic>
+#include <mutex>
 #include "common.h"
 #include "conf.h"
 #include "mpi_base.h"
@@ -31,13 +32,13 @@ class AucCalculation {
 
   private:
     std::shared_ptr<mpi::MpiBase> mpiPtr_;
-    std::unordered_map<uint64_t, float> model_;
     pthread_mutex_t modelLock_;
 
     numClickInfos* ctrClickInfo_;
     numClickInfos* ctrClickInfoBuffer_;
 
     ThreadPool pool_;
+    std::mutex mu_;
 
     LR::AucCalculationConf* conf;
 };

@@ -28,9 +28,9 @@ class MpiBase {
     public:
         int WorkerMasterCommunication(
                 void* ctrBufferForSend,
-                int64 bufferSize,
+                int bufferSize,
                 void** ctrBufferForRecved,
-                int64* bufferSizeRecved);
+                int* bufferSizeRecved);
 
     private:
         int myRank_;
