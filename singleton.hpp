@@ -5,9 +5,8 @@
 #include <iostream>
 #include <memory>
 #include <pthread.h>
-#include <boost/shared_ptr.hpp>
-#include <boost/smart_ptr/scoped_ptr.hpp>
-#include <boost/thread.hpp>
+#include <memory>
+#include <mutex>
 
 template <typename T>
 class Singleton {
@@ -48,13 +47,13 @@ class Singleton {
     ms_Singleton = NULL;
   }
   friend class std::auto_ptr<Singleton<T> >;
-  static boost::scoped_ptr<Singleton<T> > instance_;
+  static std::unique_ptr<Singleton<T> > instance_;
  private:
-  static boost::mutex lock_;
+  static std::mutex lock_;
   Singleton(const Singleton<T>&);
   Singleton& operator=(const Singleton<T>&);
 };
 
 template <typename T>T* Singleton<T>::ms_Singleton = NULL;
-template <typename T> boost::scoped_ptr<Singleton<T> > Singleton<T>::instance_;
-template <typename T> boost::mutex Singleton<T>::lock_;
+template <typename T> std::unique_ptr<Singleton<T> > Singleton<T>::instance_;
+template <typename T> std::mutex Singleton<T>::lock_;

@@ -1,4 +1,4 @@
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <glog/logging.h>
 #include <gflags/gflags.h>
 #include "conf.h"
@@ -25,11 +25,11 @@ int main(int argc, char* argv[]) {
                 ->SetModelFilePath(FLAGS_model_path);
                 // ->SetReadingBlockSize(FLAGS_block_size);
 
-    boost::shared_ptr<MpiBase> mpibase;
+    std::shared_ptr<MpiBase> mpibase;
     LOG(INFO) << "mpi init";
     mpibase.reset(new MpiBase(argc, argv));
     LOG(INFO) << "auc calculation init";
-    boost::shared_ptr<AucCalculation> aucCalculation;
+    std::shared_ptr<AucCalculation> aucCalculation;
     aucCalculation.reset(new AucCalculation(mpibase));
     LOG(INFO) << "run";
     aucCalculation->Run(conf->GetScoreFilePath());

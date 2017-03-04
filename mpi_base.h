@@ -1,6 +1,6 @@
 #pragma once
 #pragma pack(8)
-#include <boost/thread/mutex.hpp>
+#include <mutex>
 #include <vector>
 #include "common.h"
 #include "mpi.h"
@@ -36,10 +36,7 @@ class MpiBase {
         int myRank_;
         int totalRank_;
 
-        // MPI_Request mpiWorkerSendReqs_;
-        // MPI_Request mpiMasterRecvReqs_;
-
-        boost::mutex mutSendRecv_;
+        std::mutex mutSendRecv_;
 };
 
 }}

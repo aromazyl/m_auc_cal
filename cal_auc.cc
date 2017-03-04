@@ -37,7 +37,6 @@ namespace news_dl { namespace LR {
 AucCalculation::AucCalculation(std::shared_ptr<mpi::MpiBase> mpiBase) : mpiPtr_ (mpiBase) {
     conf = AucCalculationConf::GetSingletonPtr();
     LOG(INFO) << "loading model data, file path:" << conf->GetModelFilePath();
-    LoadModelData(conf->GetModelFilePath());
     ctrClickInfo_ = static_cast<numClickInfos*>(malloc(sizeof(numClickInfos) + sizeof(ClickInfo) * conf->GetBinNum()));
     assert(ctrClickInfo_);
     ctrClickInfo_->num = conf->GetBinNum();
@@ -51,14 +50,35 @@ AucCalculation::~AucCalculation() {
     pthread_mutex_destroy(&(this->modelLock_));
 }
 
+void AucCalculation::LoadPredictionData(FILE* file_pointer, std::atomic<int>* counter) {
+  int label;
+  float score;
+  char buf[1024];
+  while (fgets(buf, sizeof(buf), file_pointer)) {
+    sscanf(buf, "%d\t%f", &label, &score);
+    const int binNum = conf->GetBinNum();
+    int rank;
+    if (score == 1) rank = binNum - 1;
+    else rank = score * binNum;
+    if (label == 1) {
+      ctrClickInfo_->info[rank].Click += 1;
+    } else {
+      ctrClickInfo_->info[rank].nonClick += 1;
+    }
+  }
+  fclose(file_pointer);
+  ++(*counter);
+}
+
 bool AucCalculation::Run(const std::string& filepath) {
     std::vector<std::string> subfiles;
     opendirectory(filepath, "", &subfiles);
     std::atomic<int> counter(0);
     LOG(INFO) << "run prediction";
     for (size_t i = 0; i < subfiles.size(); ++i) {
-        this->pool_.Submit(std::bind(&AucCalculation::Prediction, this, subfiles[i], &counter));
-        // this->Prediction(subfiles[i], &counter);
+      FILE* f = fopen(subfiles[i].c_str(), "r");
+      this->pool_.Submit(std::bind(&AucCalculation::LoadPredictionData, this, f, &counter));
+      // this->Prediction(subfiles[i], &counter);
     }
     while (counter < subfiles.size()) {
         usleep(1000);
@@ -84,7 +104,6 @@ void AucCalculation::MergeData() {
             ctrClickInfo_,
             (sizeof(numClickInfos) + sizeof(ClickInfo) * ctrClickInfo_->num),
             (void**)(&ctrClickInfoBuffer_),
-            // clickInfoOffset * conf->GetTotalRank()
             &offset
             );
 

@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <glog/logging.h>
+#include <assert.h>
 #include "stringprintf.hpp"
 #include "mpi_base.h"
 
