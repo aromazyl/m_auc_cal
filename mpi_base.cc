@@ -45,22 +45,65 @@ namespace news_dl { namespace mpi {
         LR::AucCalculationConf* conf = LR::AucCalculationConf::GetSingletonPtr();
         CHECK(ctrBufferForSend) << "ctr buffer for send is empty";
         assert(ctrBufferForRecved);
-        assert(*ctrBufferForRecved);
-        std::cout << base_string::StringPrintf(
-            "MPI_Gather info,"
-            "ctrBufferForSend:%p"
-            "buffersize:%lld",
-            ctrBufferForSend,
-            buffersize);
+        if (conf->GetMyRank() == conf->GetMasterIdx()) assert(*ctrBufferForRecved);
 
+        /*
         int ret = MPI_Gather(ctrBufferForSend,
                              buffersize,
                              MPI_CHAR,
                              *ctrBufferForRecved,
-                             buffersize * totalRank_,
+                             buffersize,
                              MPI_CHAR,
                              conf->GetMasterIdx(),
                              MPI_COMM_WORLD);
+                             */
+        if (conf->GetMyRank() != conf->GetMasterIdx()) {
+          int ret = MPI_Send(
+              ctrBufferForSend,
+              buffersize,
+              MPI_CHAR,
+              conf->GetMasterIdx(),
+              conf->GetMyRank(),
+              MPI_COMM_WORLD
+              );
+          if (ret != 0) {
+            LOG(ERROR) << base_string::StringPrintf(
+                "MPI_Recv Failure"
+                );
+            exit(1);
+          }
+        } else {
+          using namespace LR;
+          for (int i = 0; i < conf->GetTotalRank(); ++i) {
+            if (i != conf->GetMasterIdx()) {
+              char* buf = (char*)(*ctrBufferForRecved) +
+                i * (sizeof(numClickInfos) + sizeof(ClickInfo) * conf->GetBinNum());
+
+              int ret = MPI_Recv(buf, buffersize, MPI_CHAR, i, i, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+              if (ret != 0) {
+                LOG(ERROR) << base_string::StringPrintf(
+                    "MPI_Recv Failure"
+                    );
+                exit(1);
+              }
+            } else {
+              memcpy(
+                  ctrBufferForSend,
+                  (char*)(*ctrBufferForRecved) + conf->GetMyRank() * (sizeof(numClickInfos)
+                    + sizeof(ClickInfo) * conf->GetBinNum()),
+                  sizeof(numClickInfos) + sizeof(ClickInfo) * conf->GetBinNum()
+                  );
+            }
+          }
+        }
+
+        if (conf->GetMyRank() == conf->GetMasterIdx()) {
+          LOG(INFO) << base_string::StringPrintf(
+              "MPI_GatherInfo:%s\n",
+              LR::DumpNumClickInfos(*((LR::numClickInfos*)(*ctrBufferForRecved))).c_str()
+              );
+        }
+        /*
         if (0 != ret) {
           LOG(ERROR) << base_string::StringPrintf(
               "MPI_Gather failed,"
@@ -70,6 +113,7 @@ namespace news_dl { namespace mpi {
               buffersize);
           exit(1);
         }
+        */
         // *ctrBufferForRecved = ctrRecvBuffer_;
         *bufferSizeRecved = totalRank_ * buffersize;
         return 0;

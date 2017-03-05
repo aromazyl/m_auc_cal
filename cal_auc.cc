@@ -39,9 +39,16 @@ AucCalculation::AucCalculation(std::shared_ptr<mpi::MpiBase> mpiBase) : mpiPtr_ 
     conf = AucCalculationConf::GetSingletonPtr();
     LOG(INFO) << "loading model data, file path:" << conf->GetModelFilePath();
     ctrClickInfo_ = static_cast<numClickInfos*>(malloc(sizeof(numClickInfos) + sizeof(ClickInfo) * conf->GetBinNum()));
+    memset(ctrClickInfo_, 0, sizeof(numClickInfos) + sizeof(ClickInfo) * conf->GetBinNum());
     assert(ctrClickInfo_);
     ctrClickInfo_->num = conf->GetBinNum();
-    ctrClickInfoBuffer_ = static_cast<numClickInfos*>(malloc((sizeof(numClickInfos) + sizeof(ClickInfo) * conf->GetBinNum()) * conf->GetTotalRank()));
+    if (conf->GetMyRank() == conf->GetMasterIdx()) {
+      std::cout << "total rank:" << conf->GetTotalRank();
+      ctrClickInfoBuffer_ = static_cast<numClickInfos*>(
+          malloc((sizeof(numClickInfos) + sizeof(ClickInfo) * conf->GetBinNum()) * conf->GetTotalRank()));
+      memset(ctrClickInfoBuffer_, 0,
+          ((sizeof(numClickInfos) + sizeof(ClickInfo) * conf->GetBinNum()) * conf->GetTotalRank()));
+    }
     pthread_mutex_init(&(this->modelLock_), NULL);
 }
 
@@ -57,6 +64,7 @@ void AucCalculation::LoadPredictionData(FILE* file_pointer, std::atomic<int>* co
   char buf[1024];
   while (fgets(buf, sizeof(buf), file_pointer)) {
     sscanf(buf, "%d\t%f", &label, &score);
+    score = 1.0 / (1 + exp(-score));
     const int binNum = conf->GetBinNum();
     int rank;
     if (score == 1) rank = binNum - 1;
@@ -82,8 +90,8 @@ bool AucCalculation::Run(const std::string& filepath) {
       std::cout << base_string::StringPrintf("subfiles[%d]=%s\n", i, subfiles[i].c_str());
       FILE* f = fopen(subfiles[i].c_str(), "r");
 
-      // this->pool_.Submit(std::bind(&AucCalculation::LoadPredictionData, this, f, &counter));
-      this->LoadPredictionData(f, &counter);
+      this->pool_.Submit(std::bind(&AucCalculation::LoadPredictionData, this, f, &counter));
+      // this->LoadPredictionData(f, &counter);
       // this->Prediction(subfiles[i], &counter);
     }
     while (counter < subfiles.size()) {
@@ -104,7 +112,8 @@ void AucCalculation::DumpResult(float score) {
 
 void AucCalculation::MergeData() {
     assert(mpiPtr_);
-    const int64_t clickInfoOffset = (sizeof(numClickInfos) + sizeof(ClickInfo) * conf->GetBinNum());
+    const int64_t clickInfoOffset =
+      (sizeof(numClickInfos) + sizeof(ClickInfo) * conf->GetBinNum());
     int offset = 0;
     mpiPtr_->WorkerMasterCommunication(
             ctrClickInfo_,
@@ -113,11 +122,12 @@ void AucCalculation::MergeData() {
             &offset
             );
 
-    if (conf->GetMyRank() == 0) {
+    if (conf->GetMyRank() == conf->GetMasterIdx()) {
         for (int i = 1; i < conf->GetTotalRank(); ++i) {
-            for (int index = 0; index < conf->GetBinNum(); ++i) {
+            for (int index = 0; index < conf->GetBinNum(); ++index) {
                 ClickInfo& info = ctrClickInfoBuffer_->info[index];
-                const ClickInfo& rinfo = ((numClickInfos*)((char*)(ctrClickInfoBuffer_) + clickInfoOffset * i))->info[index];
+                const ClickInfo& rinfo = ((numClickInfos*)((char*)(ctrClickInfoBuffer_)
+                      + clickInfoOffset * i))->info[index];
                 info.nonClick += rinfo.nonClick;
                 info.Click += rinfo.Click;
             }

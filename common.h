@@ -17,12 +17,12 @@ inline std::string DumpFeature(const Feature& feature) {
 }
 
 struct ClickInfo {
-    // int index;
     int nonClick;
     int Click;
 };
 
-inline std::string DumpClickInfo(const ClickInfo* clickInfo) {
+inline std::string
+DumpClickInfo(const ClickInfo* clickInfo) {
     std::string ret;
     char s[100];
     sprintf(s, "clickInfo: nonClick[%d], Click[%d]",
@@ -35,6 +35,15 @@ struct numClickInfos {
     int num;
     ClickInfo info[0];
 };
+
+inline std::string
+DumpNumClickInfos(const numClickInfos& infos) {
+  std::string ret;
+  for (int i = 0; i < infos.num; ++i) {
+    ret += "," + DumpClickInfo(infos.info + i);
+  }
+  return ret;
+}
 
 class ModelParser {
     public:

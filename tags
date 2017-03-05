@@ -91,16 +91,11 @@ AtEnd	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    bool A
 AtEnd	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    bool AtEnd() const {$/;"	f	class:testing::internal::CartesianProductGenerator7::Iterator
 AtEnd	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    bool AtEnd() const {$/;"	f	class:testing::internal::CartesianProductGenerator8::Iterator
 AtEnd	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    bool AtEnd() const {$/;"	f	class:testing::internal::CartesianProductGenerator9::Iterator
-AucCalculation	cal_auc.cc	/^AucCalculation::AucCalculation(boost::shared_ptr<mpi::MpiBase> mpiBase) : mpiPtr_ (mpiBase) {$/;"	f	class:news_dl::LR::AucCalculation
+AucCalculation	cal_auc.cc	/^AucCalculation::AucCalculation(std::shared_ptr<mpi::MpiBase> mpiBase) : mpiPtr_ (mpiBase) {$/;"	f	class:news_dl::LR::AucCalculation
 AucCalculation	cal_auc.h	/^class AucCalculation {$/;"	c	namespace:news_dl::LR
 AucCalculationConf	conf.h	/^        AucCalculationConf() {$/;"	f	class:news_dl::LR::AucCalculationConf
 AucCalculationConf	conf.h	/^class AucCalculationConf : public Singleton<AucCalculationConf> {$/;"	c	namespace:news_dl::LR
 AutoHandle	lib/gtest/include/gtest/internal/gtest-port.h	/^class GTEST_API_ AutoHandle {$/;"	c	namespace:testing::internal
-AutoLock	AutoLock.hpp	/^        AutoLock(pthread_mutex_t* lock) {$/;"	f	class:news_dl::AutoLock
-AutoLock	AutoLock.hpp	/^class AutoLock {$/;"	c	namespace:news_dl
-BOOST_INCLUDE	Makefile	/^BOOST_INCLUDE=${BOOST_PATH}\/include\/$/;"	m
-BOOST_LIB	Makefile	/^BOOST_LIB=${BOOST_PATH}\/lib\/$/;"	m
-BOOST_PATH	Makefile	/^BOOST_PATH=${THIRD_PARTY}\/boost\/$/;"	m
 BaseGenerator	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    virtual const ParamGeneratorInterface<ParamType>* BaseGenerator() const {$/;"	f	class:testing::internal::CartesianProductGenerator10::Iterator
 BaseGenerator	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    virtual const ParamGeneratorInterface<ParamType>* BaseGenerator() const {$/;"	f	class:testing::internal::CartesianProductGenerator2::Iterator
 BaseGenerator	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    virtual const ParamGeneratorInterface<ParamType>* BaseGenerator() const {$/;"	f	class:testing::internal::CartesianProductGenerator3::Iterator
@@ -133,7 +128,6 @@ ByRef	lib/gtest/include/gtest/internal/gtest-tuple.h	/^struct ByRef { typedef co
 ByRef	lib/gtest/include/gtest/internal/gtest-tuple.h	/^struct ByRef<T&> { typedef T& type; };  \/\/ NOLINT$/;"	s	namespace:std::tr1::gtest_internal
 CalculateAuc	cal_auc.cc	/^float AucCalculation::CalculateAuc() {$/;"	f	class:news_dl::LR::AucCalculation
 CalculateEndIndex	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  static int CalculateEndIndex(const T& begin,$/;"	f	class:testing::internal::RangeGenerator
-CalculateScore	cal_auc.cc	/^float AucCalculation::CalculateScore(Instance* instance) const {$/;"	f	class:news_dl::LR::AucCalculation
 CartesianProductGenerator10	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  CartesianProductGenerator10(const ParamGenerator<T1>& g1,$/;"	f	class:testing::internal::CartesianProductGenerator10
 CartesianProductGenerator10	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^class CartesianProductGenerator10$/;"	c	namespace:testing::internal
 CartesianProductGenerator2	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  CartesianProductGenerator2(const ParamGenerator<T1>& g1,$/;"	f	class:testing::internal::CartesianProductGenerator2
@@ -216,8 +210,8 @@ ComputeCurrentValue	lib/gtest/include/gtest/internal/gtest-param-util-generated.
 ComputeCurrentValue	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    void ComputeCurrentValue() {$/;"	f	class:testing::internal::CartesianProductGenerator7::Iterator
 ComputeCurrentValue	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    void ComputeCurrentValue() {$/;"	f	class:testing::internal::CartesianProductGenerator8::Iterator
 ComputeCurrentValue	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    void ComputeCurrentValue() {$/;"	f	class:testing::internal::CartesianProductGenerator9::Iterator
-ConditionVariable	condition_variable.hpp	/^        ConditionVariable() {$/;"	f	class:news_dl::ConditionVariable
-ConditionVariable	condition_variable.hpp	/^class ConditionVariable {$/;"	c	namespace:news_dl
+ConditionVariable	condition_variable.hpp	/^        ConditionVariable() {$/;"	f	class:ConditionVariable
+ConditionVariable	condition_variable.hpp	/^class ConditionVariable {$/;"	c
 ConstCharPtr	lib/gtest/include/gtest/internal/gtest-internal.h	/^  ConstCharPtr(const char* str) : value(str) {}$/;"	f	struct:testing::internal::ConstCharPtr
 ConstCharPtr	lib/gtest/include/gtest/internal/gtest-internal.h	/^struct GTEST_API_ ConstCharPtr {$/;"	s	namespace:testing::internal
 ContainerType	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  typedef typename ::std::vector<T> ContainerType;$/;"	t	class:testing::internal::ValuesInIteratorRangeGenerator
@@ -253,8 +247,9 @@ Destroy	mpi_base.cc	/^    bool MpiBase::Destroy() {$/;"	f	class:news_dl::mpi::Mp
 DistanceBetweenSignAndMagnitudeNumbers	lib/gtest/include/gtest/internal/gtest-internal.h	/^  static Bits DistanceBetweenSignAndMagnitudeNumbers(const Bits &sam1,$/;"	f	class:testing::internal::FloatingPoint
 Double	lib/gtest/include/gtest/internal/gtest-internal.h	/^typedef FloatingPoint<double> Double;$/;"	t	namespace:testing::internal
 DownCast_	lib/gtest/include/gtest/internal/gtest-port.h	/^inline To DownCast_(From* f) {  \/\/ so we only accept pointers$/;"	f	namespace:testing::internal
-DumpClickInfo	common.h	/^inline std::string DumpClickInfo(const ClickInfo* clickInfo) {$/;"	f	namespace:news_dl::LR
+DumpClickInfo	common.h	/^DumpClickInfo(const ClickInfo* clickInfo) {$/;"	f	namespace:news_dl::LR
 DumpFeature	common.h	/^inline std::string DumpFeature(const Feature& feature) {$/;"	f	namespace:news_dl::LR
+DumpNumClickInfos	common.h	/^DumpNumClickInfos(const numClickInfos& infos) {$/;"	f	namespace:news_dl::LR
 DumpResult	cal_auc.cc	/^void AucCalculation::DumpResult(float score) {$/;"	f	class:news_dl::LR::AucCalculation
 EXECUTE_TEST	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^  enum TestRole { OVERSEE_TEST, EXECUTE_TEST };$/;"	e	enum:testing::internal::DeathTest::TestRole
 EXPECT_ANY_THROW	lib/gtest/include/gtest/gtest.h	1847;"	d
@@ -299,7 +294,7 @@ EXPECT_STRNE	lib/gtest/include/gtest/gtest.h	1997;"	d
 EXPECT_THROW	lib/gtest/include/gtest/gtest.h	1843;"	d
 EXPECT_TRUE	lib/gtest/include/gtest/gtest.h	1859;"	d
 EditType	lib/gtest/include/gtest/internal/gtest-internal.h	/^enum EditType { kMatch, kAdd, kRemove, kReplace };$/;"	g	namespace:testing::internal::edit_distance
-Empty	thread_safe_queue.hpp	/^        bool Empty() const {$/;"	f	class:news_dl::ThreadSafeQueue
+Empty	thread_safe_queue.hpp	/^      bool Empty() const {$/;"	f	class:ThreadSafeQueue
 EmptyTestEventListener	lib/gtest/include/gtest/gtest.h	/^class EmptyTestEventListener : public TestEventListener {$/;"	c	namespace:testing
 EnableIf	lib/gtest/include/gtest/internal/gtest-internal.h	/^template<> struct EnableIf<true> { typedef void type; };  \/\/ NOLINT$/;"	s	namespace:testing::internal
 End	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  virtual ParamIteratorInterface<ParamType>* End() const {$/;"	f	class:testing::internal::CartesianProductGenerator10
@@ -544,7 +539,6 @@ GTEST_IMPL_FORMAT_C_STRING_AS_POINTER_	lib/gtest/include/gtest/gtest-printers.h	
 GTEST_IMPL_FORMAT_C_STRING_AS_POINTER_	lib/gtest/include/gtest/gtest-printers.h	306;"	d
 GTEST_IMPL_FORMAT_C_STRING_AS_STRING_	lib/gtest/include/gtest/gtest-printers.h	311;"	d
 GTEST_IMPL_FORMAT_C_STRING_AS_STRING_	lib/gtest/include/gtest/gtest-printers.h	338;"	d
-GTEST_INCLUDE	Makefile	/^GTEST_INCLUDE=${GTEST_PATH}\/include\/$/;"	m
 GTEST_INCLUDE_GTEST_GTEST_DEATH_TEST_H_	lib/gtest/include/gtest/gtest-death-test.h	39;"	d
 GTEST_INCLUDE_GTEST_GTEST_H_	lib/gtest/include/gtest/gtest.h	52;"	d
 GTEST_INCLUDE_GTEST_GTEST_MESSAGE_H_	lib/gtest/include/gtest/gtest-message.h	47;"	d
@@ -578,7 +572,6 @@ GTEST_IS_NULL_LITERAL_	lib/gtest/include/gtest/internal/gtest-internal.h	132;"	d
 GTEST_IS_THREADSAFE	lib/gtest/include/gtest/internal/gtest-port.h	922;"	d
 GTEST_LANG_CXX11	lib/gtest/include/gtest/internal/gtest-port.h	328;"	d
 GTEST_LANG_CXX11	lib/gtest/include/gtest/internal/gtest-port.h	330;"	d
-GTEST_LIB	Makefile	/^GTEST_LIB=${GTEST_PATH}\/lib\/$/;"	m
 GTEST_LOCK_EXCLUDED_	lib/gtest/include/gtest/internal/gtest-linked_ptr.h	/^      GTEST_LOCK_EXCLUDED_(g_linked_ptr_mutex) {$/;"	f	class:testing::internal::linked_ptr_internal
 GTEST_LOCK_EXCLUDED_	lib/gtest/include/gtest/internal/gtest-port.h	2540;"	d
 GTEST_LOG_	lib/gtest/include/gtest/internal/gtest-port.h	1277;"	d
@@ -612,7 +605,6 @@ GTEST_OS_WINDOWS_MOBILE	lib/gtest/include/gtest/internal/gtest-port-arch.h	46;"	
 GTEST_OS_WINDOWS_PHONE	lib/gtest/include/gtest/internal/gtest-port-arch.h	54;"	d
 GTEST_OS_WINDOWS_RT	lib/gtest/include/gtest/internal/gtest-port-arch.h	56;"	d
 GTEST_OS_ZOS	lib/gtest/include/gtest/internal/gtest-port-arch.h	78;"	d
-GTEST_PATH	Makefile	/^GTEST_PATH=.\/lib\/gtest\/$/;"	m
 GTEST_PATH_SEP_	lib/gtest/include/gtest/internal/gtest-port.h	2240;"	d
 GTEST_PATH_SEP_	lib/gtest/include/gtest/internal/gtest-port.h	2245;"	d
 GTEST_PRED1_	lib/gtest/include/gtest/gtest_pred_impl.h	106;"	d
@@ -796,7 +788,7 @@ Head	lib/gtest/include/gtest/internal/gtest-type-util.h	/^  typedef TemplateSel<
 Head	lib/gtest/include/gtest/internal/gtest-type-util.h	/^  typedef TemplateSel<T1> Head;$/;"	t	struct:testing::internal::Templates7
 Head	lib/gtest/include/gtest/internal/gtest-type-util.h	/^  typedef TemplateSel<T1> Head;$/;"	t	struct:testing::internal::Templates8
 Head	lib/gtest/include/gtest/internal/gtest-type-util.h	/^  typedef TemplateSel<T1> Head;$/;"	t	struct:testing::internal::Templates9
-INCLUDE	Makefile	/^INCLUDE=-I ${BOOST_INCLUDE} -I ${GLOG_INCLUDE} -I ${GFLAGS_INCLUDE} -L${BOOST_LIB} -L${GLOG_LIB} -L${GFLAGS_LIB} -lgflags -lglog -pthread -lboost_system -lboost_thread -lrt -DGFLAGS_NAMESPACE=google -DBUILD_SHARED_LIBS=ON  -L${GTEST_LIB} -I{GTEST_INCLUDE} -lgtest$/;"	m
+INCLUDE	Makefile	/^INCLUDE=-I ${GLOG_INCLUDE} -I ${GFLAGS_INCLUDE} -L${GLOG_LIB} -L${GFLAGS_LIB} -lgflags -lglog -pthread -DGFLAGS_NAMESPACE=google -DBUILD_SHARED_LIBS=ON$/;"	m
 INSTANTIATE_TEST_CASE_P	lib/gtest/include/gtest/gtest-param-test.h	1421;"	d
 INSTANTIATE_TYPED_TEST_CASE_P	lib/gtest/include/gtest/gtest-typed-test.h	251;"	d
 INTERCEPT_ALL_THREADS	lib/gtest/include/gtest/gtest-spi.h	/^    INTERCEPT_ALL_THREADS           \/\/ Intercepts all failures.$/;"	e	enum:testing::ScopedFakeTestPartResultReporter::InterceptMode
@@ -807,8 +799,6 @@ Infinity	lib/gtest/include/gtest/internal/gtest-internal.h	/^  static RawType In
 Init	mpi_base.cc	/^    void MpiBase::Init(int argc, char* argv[]) {$/;"	f	class:news_dl::mpi::MpiBase
 InitCopy	lib/gtest/include/gtest/internal/gtest-internal.h	/^  void InitCopy(const Element* array, size_t a_size) {$/;"	f	class:testing::internal::NativeArray
 InitRef	lib/gtest/include/gtest/internal/gtest-internal.h	/^  void InitRef(const Element* array, size_t a_size) {$/;"	f	class:testing::internal::NativeArray
-Instance	common.h	/^struct Instance {$/;"	s	namespace:news_dl::LR
-InstanceParser	common.h	/^class InstanceParser {$/;"	c	namespace:news_dl::LR
 InstanceValueHolderFactory	lib/gtest/include/gtest/internal/gtest-port.h	/^    explicit InstanceValueHolderFactory(const T& value) : value_(value) {}$/;"	f	class:testing::internal::ThreadLocal::InstanceValueHolderFactory
 InstanceValueHolderFactory	lib/gtest/include/gtest/internal/gtest-port.h	/^  class InstanceValueHolderFactory : public ValueHolderFactory {$/;"	c	class:testing::internal::ThreadLocal
 InstantiationContainer	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  typedef ::std::vector<InstantiationInfo> InstantiationContainer;$/;"	t	class:testing::internal::ParameterizedTestCaseInfo
@@ -882,8 +872,7 @@ LR	cal_auc.cc	/^namespace news_dl { namespace LR {$/;"	n	namespace:news_dl	file:
 LR	cal_auc.h	/^namespace news_dl { namespace LR {$/;"	n	namespace:news_dl
 LR	common.h	/^namespace news_dl { namespace LR {$/;"	n	namespace:news_dl
 LR	conf.h	/^namespace news_dl { namespace LR {$/;"	n	namespace:news_dl
-LoadModelData	cal_auc.cc	/^void AucCalculation::LoadModelData(const std::string& modelPath) {$/;"	f	class:news_dl::LR::AucCalculation
-LoadModelDataFile	cal_auc.cc	/^void AucCalculation::LoadModelDataFile(const std::string& modelfile, boost::atomic<int>* counter) {$/;"	f	class:news_dl::LR::AucCalculation
+LoadPredictionData	cal_auc.cc	/^void AucCalculation::LoadPredictionData(FILE* file_pointer, std::atomic<int>* counter) {$/;"	f	class:news_dl::LR::AucCalculation
 Lock	lib/gtest/include/gtest/internal/gtest-port.h	/^  void Lock() {$/;"	f	class:testing::internal::MutexBase
 Lock	lib/gtest/include/gtest/internal/gtest-port.h	/^  void Lock() {}$/;"	f	class:testing::internal::Mutex
 LogToStderr	lib/gtest/include/gtest/internal/gtest-port.h	/^inline void LogToStderr() {}$/;"	f	namespace:testing::internal
@@ -965,14 +954,12 @@ ParameterizedTestCaseRegistry	lib/gtest/include/gtest/internal/gtest-param-util.
 ParameterizedTestCaseRegistry	lib/gtest/include/gtest/internal/gtest-param-util.h	/^class ParameterizedTestCaseRegistry {$/;"	c	namespace:testing::internal
 ParameterizedTestFactory	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  explicit ParameterizedTestFactory(ParamType parameter) :$/;"	f	class:testing::internal::ParameterizedTestFactory
 ParameterizedTestFactory	lib/gtest/include/gtest/internal/gtest-param-util.h	/^class ParameterizedTestFactory : public TestFactoryBase {$/;"	c	namespace:testing::internal
-Parse	common.h	/^        static bool Parse(char* line, Instance* instance, char* kvBuffer) {$/;"	f	class:news_dl::LR::InstanceParser
 Parse	common.h	/^        static bool Parse(char* line, int* key, float* value) {$/;"	f	class:news_dl::LR::ModelParser
 PartialMatch	lib/gtest/include/gtest/internal/gtest-port.h	/^  static bool PartialMatch(const ::std::string& str, const RE& re) {$/;"	f	class:testing::internal::RE
 PartialMatch	lib/gtest/include/gtest/internal/gtest-port.h	/^  static bool PartialMatch(const ::string& str, const RE& re) {$/;"	f	class:testing::internal::RE
 Passed	lib/gtest/include/gtest/gtest.h	/^  bool Passed() const { return !Failed(); }$/;"	f	class:testing::TestCase
 Passed	lib/gtest/include/gtest/gtest.h	/^  bool Passed() const { return !Failed(); }$/;"	f	class:testing::TestResult
-Post	condition_variable.hpp	/^        void Post() {$/;"	f	class:news_dl::ConditionVariable
-Prediction	cal_auc.cc	/^void AucCalculation::Prediction(const std::string& filePath, boost::atomic<int>* counter) {$/;"	f	class:news_dl::LR::AucCalculation
+Post	condition_variable.hpp	/^        void Post() {$/;"	f	class:ConditionVariable
 Print	lib/gtest/include/gtest/gtest-printers.h	/^  static void Print(char* str, ::std::ostream* os) {$/;"	f	class:testing::internal::UniversalTersePrinter
 Print	lib/gtest/include/gtest/gtest-printers.h	/^  static void Print(const T& value, ::std::ostream* os) {$/;"	f	class:testing::internal::UniversalPrinter
 Print	lib/gtest/include/gtest/gtest-printers.h	/^  static void Print(const T& value, ::std::ostream* os) {$/;"	f	class:testing::internal::UniversalTersePrinter
@@ -1012,7 +999,7 @@ PrintToString	lib/gtest/include/gtest/gtest-printers.h	/^::std::string PrintToSt
 PrintToStringParamName	lib/gtest/include/gtest/internal/gtest-param-util.h	/^struct PrintToStringParamName {$/;"	s	namespace:testing
 PrintTupleTo	lib/gtest/include/gtest/gtest-printers.h	/^void PrintTupleTo(const Tuple& t, ::std::ostream* os) {$/;"	f	namespace:testing::internal
 PrintValue	lib/gtest/include/gtest/gtest-printers.h	/^  static void PrintValue(const T& value, ::std::ostream* os) {$/;"	f	class:testing::internal2::TypeWithoutFormatter
-Push	thread_safe_queue.hpp	/^        void Push(T new_value) {$/;"	f	class:news_dl::ThreadSafeQueue
+Push	thread_safe_queue.hpp	/^      void Push(const T& new_value) {$/;"	f	class:ThreadSafeQueue
 RE	lib/gtest/include/gtest/internal/gtest-port.h	/^  RE(const ::std::string& regex) { Init(regex.c_str()); }  \/\/ NOLINT$/;"	f	class:testing::internal::RE
 RE	lib/gtest/include/gtest/internal/gtest-port.h	/^  RE(const ::string& regex) { Init(regex.c_str()); }  \/\/ NOLINT$/;"	f	class:testing::internal::RE
 RE	lib/gtest/include/gtest/internal/gtest-port.h	/^  RE(const RE& other) { Init(other.pattern()); }$/;"	f	class:testing::internal::RE
@@ -1056,6 +1043,7 @@ Runnable	lib/gtest/include/gtest/internal/gtest-port.h	/^  class Runnable {$/;"	
 RunnableImpl	lib/gtest/include/gtest/internal/gtest-port.h	/^    RunnableImpl(UserThreadFunc* func, T param)$/;"	f	class:testing::internal::ThreadWithParam::RunnableImpl
 RunnableImpl	lib/gtest/include/gtest/internal/gtest-port.h	/^  class RunnableImpl : public Runnable {$/;"	c	class:testing::internal::ThreadWithParam
 SCOPED_TRACE	lib/gtest/include/gtest/gtest.h	2115;"	d
+SEED	cal_auc.h	13;"	d
 SUCCEED	lib/gtest/include/gtest/gtest.h	1831;"	d
 ScopedFakeTestPartResultReporter	lib/gtest/include/gtest/gtest-spi.h	/^class GTEST_API_ ScopedFakeTestPartResultReporter$/;"	c	namespace:testing
 ScopedTrace	lib/gtest/include/gtest/internal/gtest-internal.h	/^class GTEST_API_ ScopedTrace {$/;"	c	namespace:testing::internal
@@ -1099,9 +1087,11 @@ StreamHelper	lib/gtest/include/gtest/gtest-message.h	/^  inline void StreamHelpe
 StreamHelper	lib/gtest/include/gtest/gtest-message.h	/^  inline void StreamHelper(internal::true_type \/*is_pointer*\/, T* pointer) {$/;"	f	class:testing::Message
 StreamableToString	lib/gtest/include/gtest/gtest-message.h	/^std::string StreamableToString(const T& streamable) {$/;"	f	namespace:testing::internal
 String	lib/gtest/include/gtest/internal/gtest-string.h	/^class GTEST_API_ String {$/;"	c	namespace:testing::internal
+StringAppendV	stringprintf.hpp	/^inline void StringAppendV(std::string* dst, const char* format, va_list ap) {$/;"	f	namespace:base_string::__anon4
+StringPrintf	stringprintf.hpp	/^inline std::string StringPrintf(const char* format, ...) {$/;"	f	namespace:base_string
 Strings	lib/gtest/include/gtest/gtest-printers.h	/^typedef ::std::vector<string> Strings;$/;"	t	namespace:testing::internal
 StripTrailingSpaces	lib/gtest/include/gtest/internal/gtest-port.h	/^inline std::string StripTrailingSpaces(std::string str) {$/;"	f	namespace:testing::internal
-Submit	simple_threadpool.hpp	/^        void Submit(FunctionType f) {$/;"	f	class:news_dl::ThreadPool
+Submit	simple_threadpool.hpp	/^        void Submit(FunctionType f) {$/;"	f	class:ThreadPool
 T	lib/gtest/include/gtest/gtest-printers.h	/^  static void Print(const T (&a)[N], ::std::ostream* os) {$/;"	m	class:testing::internal::UniversalPrinter
 T	lib/gtest/include/gtest/gtest-printers.h	/^  static void Print(const T (&value)[N], ::std::ostream* os) {$/;"	m	class:testing::internal::UniversalTersePrinter
 T	lib/gtest/include/gtest/internal/gtest-internal.h	/^inline bool ArrayEq(const T(&lhs)[N], const U(&rhs)[N]) {$/;"	m	namespace:testing::internal
@@ -1111,11 +1101,9 @@ TEST	lib/gtest/include/gtest/gtest.h	2187;"	d
 TEST_DID_NOT_DIE	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^    TEST_DID_NOT_DIE$/;"	e	enum:testing::internal::DeathTest::AbortReason
 TEST_ENCOUNTERED_RETURN_STATEMENT	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^    TEST_ENCOUNTERED_RETURN_STATEMENT,$/;"	e	enum:testing::internal::DeathTest::AbortReason
 TEST_F	lib/gtest/include/gtest/gtest.h	2216;"	d
-TEST_H	test.h	9;"	d
-TEST_MAIN	test.h	16;"	d
 TEST_P	lib/gtest/include/gtest/gtest-param-test.h	1380;"	d
 TEST_THREW_EXCEPTION	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^    TEST_THREW_EXCEPTION,$/;"	e	enum:testing::internal::DeathTest::AbortReason
-THIRD_PARTY	Makefile	/^THIRD_PARTY=\/data\/env\/$/;"	m
+THIRD_PARTY	Makefile	/^THIRD_PARTY=\/data\/env$/;"	m
 TYPED_TEST	lib/gtest/include/gtest/gtest-typed-test.h	169;"	d
 TYPED_TEST_CASE	lib/gtest/include/gtest/gtest-typed-test.h	165;"	d
 TYPED_TEST_CASE_P	lib/gtest/include/gtest/gtest-typed-test.h	220;"	d
@@ -1339,10 +1327,10 @@ ThreadLocalBase	lib/gtest/include/gtest/internal/gtest-port.h	/^  ThreadLocalBas
 ThreadLocalBase	lib/gtest/include/gtest/internal/gtest-port.h	/^class ThreadLocalBase {$/;"	c	namespace:testing::internal
 ThreadLocalRegistry	lib/gtest/include/gtest/internal/gtest-port.h	/^class GTEST_API_ ThreadLocalRegistry {$/;"	c	namespace:testing::internal
 ThreadLocalValueHolderBase	lib/gtest/include/gtest/internal/gtest-port.h	/^class ThreadLocalValueHolderBase {$/;"	c	namespace:testing::internal
-ThreadPool	simple_threadpool.hpp	/^        ThreadPool(): done_(false) {$/;"	f	class:news_dl::ThreadPool
-ThreadPool	simple_threadpool.hpp	/^class ThreadPool {$/;"	c	namespace:news_dl
-ThreadSafeQueue	thread_safe_queue.hpp	/^        ThreadSafeQueue() {$/;"	f	class:news_dl::ThreadSafeQueue
-ThreadSafeQueue	thread_safe_queue.hpp	/^class ThreadSafeQueue {$/;"	c	namespace:news_dl
+ThreadPool	simple_threadpool.hpp	/^        ThreadPool(): done_(false) {$/;"	f	class:ThreadPool
+ThreadPool	simple_threadpool.hpp	/^class ThreadPool {$/;"	c
+ThreadSafeQueue	thread_safe_queue.hpp	/^      ThreadSafeQueue() {$/;"	f	class:ThreadSafeQueue
+ThreadSafeQueue	thread_safe_queue.hpp	/^class ThreadSafeQueue {$/;"	c
 ThreadWithParam	lib/gtest/include/gtest/internal/gtest-port.h	/^  ThreadWithParam(UserThreadFunc* func, T param, Notification* thread_can_start)$/;"	f	class:testing::internal::ThreadWithParam
 ThreadWithParam	lib/gtest/include/gtest/internal/gtest-port.h	/^class ThreadWithParam : public ThreadWithParamBase {$/;"	c	namespace:testing::internal
 ThreadWithParamBase	lib/gtest/include/gtest/internal/gtest-port.h	/^class GTEST_API_ ThreadWithParamBase {$/;"	c	namespace:testing::internal
@@ -1351,8 +1339,8 @@ TimeInMillis	lib/gtest/include/gtest/gtest.h	/^typedef internal::TimeInMillis Ti
 TimeInMillis	lib/gtest/include/gtest/internal/gtest-port.h	/^typedef TypeWithSize<8>::Int TimeInMillis;  \/\/ Represents time in milliseconds.$/;"	t	namespace:testing::internal
 ToLower	lib/gtest/include/gtest/internal/gtest-port.h	/^inline char ToLower(char ch) {$/;"	f	namespace:testing::internal
 ToUpper	lib/gtest/include/gtest/internal/gtest-port.h	/^inline char ToUpper(char ch) {$/;"	f	namespace:testing::internal
-TryPop	thread_safe_queue.hpp	/^        bool TryPop(T& value) {$/;"	f	class:news_dl::ThreadSafeQueue
-TryPop	thread_safe_queue.hpp	/^        boost::shared_ptr<T> TryPop() {$/;"	f	class:news_dl::ThreadSafeQueue
+TryPop	thread_safe_queue.hpp	/^      bool TryPop(T& value) {$/;"	f	class:ThreadSafeQueue
+TryPop	thread_safe_queue.hpp	/^      std::shared_ptr<T> TryPop() {$/;"	f	class:ThreadSafeQueue
 Tuple	lib/gtest/include/gtest/gtest-printers.h	/^  typedef ::std::tuple<Types...> Tuple;$/;"	t	struct:testing::internal::TuplePolicy
 Tuple	lib/gtest/include/gtest/gtest-printers.h	/^  typedef TupleT Tuple;$/;"	t	struct:testing::internal::TuplePolicy
 TupleElement	lib/gtest/include/gtest/internal/gtest-tuple.h	/^struct TupleElement<true, 0, GTEST_10_TUPLE_(T) > {$/;"	s	namespace:std::tr1::gtest_internal
@@ -1638,13 +1626,13 @@ ValuesIn	lib/gtest/include/gtest/gtest-param-test.h	/^ValuesIn(ForwardIterator b
 ValuesIn	lib/gtest/include/gtest/gtest-param-test.h	/^internal::ParamGenerator<typename Container::value_type> ValuesIn($/;"	f	namespace:testing
 ValuesInIteratorRangeGenerator	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  ValuesInIteratorRangeGenerator(ForwardIterator begin, ForwardIterator end)$/;"	f	class:testing::internal::ValuesInIteratorRangeGenerator
 ValuesInIteratorRangeGenerator	lib/gtest/include/gtest/internal/gtest-param-util.h	/^class ValuesInIteratorRangeGenerator : public ParamGeneratorInterface<T> {$/;"	c	namespace:testing::internal
-Wait	condition_variable.hpp	/^        void Wait() {$/;"	f	class:news_dl::ConditionVariable
-WaitAndPop	thread_safe_queue.hpp	/^        boost::shared_ptr<T> WaitAndPop() {$/;"	f	class:news_dl::ThreadSafeQueue
-WaitAndPop	thread_safe_queue.hpp	/^        void WaitAndPop(T& value) {$/;"	f	class:news_dl::ThreadSafeQueue
+Wait	condition_variable.hpp	/^        void Wait() {$/;"	f	class:ConditionVariable
+WaitAndPop	thread_safe_queue.hpp	/^      std::shared_ptr<T> WaitAndPop() {$/;"	f	class:ThreadSafeQueue
+WaitAndPop	thread_safe_queue.hpp	/^      void WaitAndPop(T& value) {$/;"	f	class:ThreadSafeQueue
 WaitForNotification	lib/gtest/include/gtest/internal/gtest-port.h	/^  void WaitForNotification() {$/;"	f	class:testing::internal::Notification
 WithParamInterface	lib/gtest/include/gtest/gtest.h	/^class WithParamInterface {$/;"	c	namespace:testing
 WorkerMasterCommunication	mpi_base.cc	/^    int MpiBase::WorkerMasterCommunication(void* ctrBufferForSend,$/;"	f	class:news_dl::mpi::MpiBase
-WorkerThread	simple_threadpool.hpp	/^        void WorkerThread() {$/;"	f	class:news_dl::ThreadPool
+WorkerThread	simple_threadpool.hpp	/^        void WorkerThread() {$/;"	f	class:ThreadPool
 Write	lib/gtest/include/gtest/internal/gtest-port.h	/^inline int Write(int fd, const void* buf, unsigned int count) {$/;"	f	namespace:testing::internal::posix
 _HAS_EXCEPTIONS	lib/gtest/include/gtest/internal/gtest-port.h	467;"	d
 ad_hoc_test_result	lib/gtest/include/gtest/gtest.h	/^  const TestResult& ad_hoc_test_result() const { return ad_hoc_test_result_; }$/;"	f	class:testing::TestCase
@@ -1662,6 +1650,7 @@ base_	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    const 
 base_	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    const ParamGeneratorInterface<ParamType>* const base_;$/;"	m	class:testing::internal::CartesianProductGenerator9::Iterator
 base_	lib/gtest/include/gtest/internal/gtest-param-util.h	/^    const ParamGeneratorInterface<T>* const base_;$/;"	m	class:testing::internal::RangeGenerator::Iterator
 base_	lib/gtest/include/gtest/internal/gtest-param-util.h	/^    const ParamGeneratorInterface<T>* const base_;$/;"	m	class:testing::internal::ValuesInIteratorRangeGenerator::Iterator
+base_string	stringprintf.hpp	/^namespace base_string {$/;"	n
 basic_manipulator	lib/gtest/include/gtest/gtest.h	/^      ::std::ostream& (*basic_manipulator)(::std::ostream& stream)) {$/;"	f	class:testing::AssertionResult
 begin	lib/gtest/include/gtest/internal/gtest-internal.h	/^  const_iterator begin() const { return array_; }$/;"	f	class:testing::internal::NativeArray
 begin	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  iterator begin() const { return iterator(impl_->Begin()); }$/;"	f	class:testing::internal::ParamGenerator
@@ -1727,20 +1716,18 @@ blockSize_	conf.h	/^        int64_t blockSize_;$/;"	m	class:news_dl::LR::AucCalc
 bool_constant	lib/gtest/include/gtest/internal/gtest-port.h	/^struct bool_constant {$/;"	s	namespace:testing::internal
 c_str	lib/gtest/include/gtest/internal/gtest-filepath.h	/^  const char* c_str() const { return pathname_.c_str(); }$/;"	f	class:testing::internal::FilePath
 capture	lib/gtest/include/gtest/internal/gtest-linked_ptr.h	/^  void capture(T* ptr) {$/;"	f	class:testing::internal::linked_ptr
-cid	common.h	/^    char cid[20];$/;"	m	struct:news_dl::LR::Instance
 clone_	lib/gtest/include/gtest/internal/gtest-internal.h	/^  void (NativeArray::*clone_)(const Element*, size_t);$/;"	m	class:testing::internal::NativeArray
 code_location_	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  CodeLocation code_location_;$/;"	m	class:testing::internal::ParameterizedTestCaseInfo
-cond_	condition_variable.hpp	/^        pthread_cond_t cond_;$/;"	m	class:news_dl::ConditionVariable
-cond_	simple_threadpool.hpp	/^        ConditionVariable cond_;$/;"	m	class:news_dl::ThreadPool
-cond_	thread_safe_queue.hpp	/^        ConditionVariable cond_;$/;"	m	class:news_dl::ThreadSafeQueue
-conf	cal_auc.h	/^        LR::AucCalculationConf* conf;$/;"	m	class:news_dl::LR::AucCalculation
+cond_	condition_variable.hpp	/^        pthread_cond_t cond_;$/;"	m	class:ConditionVariable
+cond_	thread_safe_queue.hpp	/^      std::condition_variable cond_;$/;"	m	class:ThreadSafeQueue
+conf	cal_auc.h	/^    LR::AucCalculationConf* conf;$/;"	m	class:news_dl::LR::AucCalculation
 const_iterator	lib/gtest/include/gtest/internal/gtest-internal.h	/^  typedef const Element* const_iterator;$/;"	t	class:testing::internal::NativeArray
 container_	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  const ContainerType container_;$/;"	m	class:testing::internal::ValuesInIteratorRangeGenerator
 copy	lib/gtest/include/gtest/internal/gtest-linked_ptr.h	/^  template <typename U> void copy(linked_ptr<U> const* ptr) {$/;"	f	class:testing::internal::linked_ptr
 critical_section_	lib/gtest/include/gtest/internal/gtest-port.h	/^  GTEST_CRITICAL_SECTION* critical_section_;$/;"	m	class:testing::internal::Mutex
 critical_section_init_phase_	lib/gtest/include/gtest/internal/gtest-port.h	/^  long critical_section_init_phase_;  \/\/ NOLINT$/;"	m	class:testing::internal::Mutex
-ctrClickInfoBuffer_	cal_auc.h	/^        numClickInfos* ctrClickInfoBuffer_;$/;"	m	class:news_dl::LR::AucCalculation
-ctrClickInfo_	cal_auc.h	/^        numClickInfos* ctrClickInfo_;$/;"	m	class:news_dl::LR::AucCalculation
+ctrClickInfoBuffer_	cal_auc.h	/^    numClickInfos* ctrClickInfoBuffer_;$/;"	m	class:news_dl::LR::AucCalculation
+ctrClickInfo_	cal_auc.h	/^    numClickInfos* ctrClickInfo_;$/;"	m	class:news_dl::LR::AucCalculation
 current10_	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    typename ParamGenerator<T10>::iterator current10_;$/;"	m	class:testing::internal::CartesianProductGenerator10::Iterator
 current1_	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    typename ParamGenerator<T1>::iterator current1_;$/;"	m	class:testing::internal::CartesianProductGenerator10::Iterator
 current1_	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    typename ParamGenerator<T1>::iterator current1_;$/;"	m	class:testing::internal::CartesianProductGenerator2::Iterator
@@ -1806,7 +1793,7 @@ current_value_	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^ 
 current_value_	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^    ParamType current_value_;$/;"	m	class:testing::internal::CartesianProductGenerator9::Iterator
 dataFilePath_	conf.h	/^        std::string dataFilePath_;$/;"	m	class:news_dl::LR::AucCalculationConf
 data_	lib/gtest/include/gtest/gtest.h	/^  AssertHelperData* const data_;$/;"	m	class:testing::internal::AssertHelper
-data_queue_	thread_safe_queue.hpp	/^        std::queue<boost::shared_ptr<T> > data_queue_;$/;"	m	class:news_dl::ThreadSafeQueue
+data_queue_	thread_safe_queue.hpp	/^      std::queue<std::shared_ptr<T> > data_queue_;$/;"	m	class:ThreadSafeQueue
 death_test_count	lib/gtest/include/gtest/gtest.h	/^  int death_test_count() const { return death_test_count_; }$/;"	f	class:testing::TestResult
 death_test_count_	lib/gtest/include/gtest/gtest.h	/^  int death_test_count_;$/;"	m	class:testing::TestResult
 default_factory_	lib/gtest/include/gtest/internal/gtest-port.h	/^  scoped_ptr<ValueHolderFactory> default_factory_;$/;"	m	class:testing::internal::ThreadLocal
@@ -1816,7 +1803,7 @@ default_xml_generator	lib/gtest/include/gtest/gtest.h	/^  TestEventListener* def
 default_xml_generator_	lib/gtest/include/gtest/gtest.h	/^  TestEventListener* default_xml_generator_;$/;"	m	class:testing::TestEventListeners
 depart	lib/gtest/include/gtest/internal/gtest-linked_ptr.h	/^  void depart() {$/;"	f	class:testing::internal::linked_ptr
 difference_type	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  typedef ptrdiff_t difference_type;$/;"	t	class:testing::internal::ParamIterator
-done_	simple_threadpool.hpp	/^        boost::atomic_bool done_;$/;"	m	class:news_dl::ThreadPool
+done_	simple_threadpool.hpp	/^        std::atomic_bool done_;$/;"	m	class:ThreadPool
 dummy_	lib/gtest/include/gtest/internal/gtest-internal.h	/^  static bool dummy_;$/;"	m	class:testing::internal::TypeIdHelper
 dummy_	lib/gtest/include/gtest/internal/gtest-internal.h	/^bool TypeIdHelper<T>::dummy_ = false;$/;"	m	class:testing::internal::TypeIdHelper
 edit_distance	lib/gtest/include/gtest/internal/gtest-internal.h	/^namespace edit_distance {$/;"	n	namespace:testing::internal
@@ -1913,7 +1900,6 @@ failed	lib/gtest/include/gtest/gtest-test-part.h	/^  bool failed() const { retur
 failure_message	lib/gtest/include/gtest/gtest.h	/^  const char* failure_message() const { return message(); }$/;"	f	class:testing::AssertionResult
 false_type	lib/gtest/include/gtest/internal/gtest-port.h	/^typedef bool_constant<false> false_type;$/;"	t	namespace:testing::internal
 fatally_failed	lib/gtest/include/gtest/gtest-test-part.h	/^  bool fatally_failed() const { return type_ == kFatalFailure; }$/;"	f	class:testing::TestPartResult
-feature	common.h	/^    Feature feature[0];$/;"	m	struct:news_dl::LR::Instance
 file	lib/gtest/include/gtest/gtest.h	/^    const char* const file;$/;"	m	struct:testing::internal::AssertHelper::AssertHelperData
 file	lib/gtest/include/gtest/gtest.h	/^  const char* file() const { return location_.file.c_str(); }$/;"	f	class:testing::TestInfo
 file	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^  const std::string& file() const { return file_; }$/;"	f	class:testing::internal::InternalRunDeathTestFlag
@@ -1924,7 +1910,6 @@ file_name	lib/gtest/include/gtest/gtest-test-part.h	/^  const char* file_name() 
 file_name_	lib/gtest/include/gtest/gtest-test-part.h	/^  std::string file_name_;$/;"	m	class:testing::TestPartResult
 finished_	lib/gtest/include/gtest/internal/gtest-port.h	/^  bool finished_;  \/\/ true iff we know that the thread function has finished.$/;"	m	class:testing::internal::ThreadWithParam
 fixture_class_id_	lib/gtest/include/gtest/gtest.h	/^  const internal::TypeId fixture_class_id_;   \/\/ ID of the test fixture class$/;"	m	class:testing::TestInfo
-fnum	common.h	/^    int fnum;$/;"	m	struct:news_dl::LR::Instance
 fraction_bits	lib/gtest/include/gtest/internal/gtest-internal.h	/^  Bits fraction_bits() const { return kFractionBitMask & u_.bits_; }$/;"	f	class:testing::internal::FloatingPoint
 full_pattern_	lib/gtest/include/gtest/internal/gtest-port.h	/^  const char* full_pattern_;  \/\/ For FullMatch();$/;"	m	class:testing::internal::RE
 full_regex_	lib/gtest/include/gtest/internal/gtest-port.h	/^  regex_t full_regex_;     \/\/ For FullMatch().$/;"	m	class:testing::internal::RE
@@ -2064,8 +2049,8 @@ index	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  size_t index;$/;"	
 index_	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^  int index_;$/;"	m	class:testing::internal::InternalRunDeathTestFlag
 index_	lib/gtest/include/gtest/internal/gtest-param-util.h	/^    int index_;$/;"	m	class:testing::internal::RangeGenerator::Iterator
 info	common.h	/^    ClickInfo info[0];$/;"	m	struct:news_dl::LR::numClickInfos
-instance_	singleton.hpp	/^  static boost::scoped_ptr<Singleton<T> > instance_;$/;"	m	class:Singleton
-instance_	singleton.hpp	/^template <typename T> boost::scoped_ptr<Singleton<T> > Singleton<T>::instance_;$/;"	m	class:Singleton
+instance_	singleton.hpp	/^  static std::unique_ptr<Singleton<T> > instance_;$/;"	m	class:Singleton
+instance_	singleton.hpp	/^template <typename T> std::unique_ptr<Singleton<T> > Singleton<T>::instance_;$/;"	m	class:Singleton
 instantiations_	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  InstantiationContainer instantiations_;$/;"	m	class:testing::internal::ParameterizedTestCaseInfo
 int64	mpi_base.h	8;"	d
 intercept_mode_	lib/gtest/include/gtest/gtest-spi.h	/^  const InterceptMode intercept_mode_;$/;"	m	class:testing::ScopedFakeTestPartResultReporter
@@ -2091,7 +2076,6 @@ is_pointer	lib/gtest/include/gtest/internal/gtest-port.h	/^struct is_pointer : p
 is_pointer	lib/gtest/include/gtest/internal/gtest-port.h	/^struct is_pointer<T*> : public true_type {};$/;"	s	namespace:testing::internal
 is_reportable	lib/gtest/include/gtest/gtest.h	/^  bool is_reportable() const {$/;"	f	class:testing::TestInfo
 is_valid_	lib/gtest/include/gtest/internal/gtest-port.h	/^  bool is_valid_;$/;"	m	class:testing::internal::RE
-islastInstance	common.h	/^    int islastInstance;$/;"	m	struct:news_dl::LR::Instance
 iterator	lib/gtest/include/gtest/internal/gtest-internal.h	/^  typedef Element* iterator;$/;"	t	class:testing::internal::NativeArray
 iterator	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  typedef ParamIterator<T> iterator;$/;"	t	class:testing::internal::ParamGenerator
 iterator_	lib/gtest/include/gtest/internal/gtest-param-util.h	/^    typename ContainerType::const_iterator iterator_;$/;"	m	class:testing::internal::ValuesInIteratorRangeGenerator::Iterator
@@ -2127,7 +2111,7 @@ kSuccess	lib/gtest/include/gtest/gtest-test-part.h	/^    kSuccess,          \/\/
 key	lib/gtest/include/gtest/gtest.h	/^  const char* key() const {$/;"	f	class:testing::TestProperty
 key_	lib/gtest/include/gtest/gtest.h	/^  std::string key_;$/;"	m	class:testing::TestProperty
 key_	lib/gtest/include/gtest/internal/gtest-port.h	/^  const pthread_key_t key_;$/;"	m	class:testing::internal::ThreadLocal
-label	common.h	/^    float label;$/;"	m	struct:news_dl::LR::Instance
+label_score	test_data/auc.py	/^label_score = []$/;"	v
 last_death_test_message_	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^  static std::string last_death_test_message_;$/;"	m	class:testing::internal::DeathTest
 line	lib/gtest/include/gtest/gtest.h	/^    int const line;$/;"	m	struct:testing::internal::AssertHelper::AssertHelperData
 line	lib/gtest/include/gtest/gtest.h	/^  int line() const { return location_.line; }$/;"	f	class:testing::TestInfo
@@ -2144,10 +2128,10 @@ linked_ptr	lib/gtest/include/gtest/internal/gtest-linked_ptr.h	/^  template <typ
 linked_ptr	lib/gtest/include/gtest/internal/gtest-linked_ptr.h	/^class linked_ptr {$/;"	c	namespace:testing::internal
 linked_ptr_internal	lib/gtest/include/gtest/internal/gtest-linked_ptr.h	/^class linked_ptr_internal {$/;"	c	namespace:testing::internal
 location_	lib/gtest/include/gtest/gtest.h	/^  internal::CodeLocation location_;$/;"	m	class:testing::TestInfo
-lock_	AutoLock.hpp	/^        pthread_mutex_t* lock_;$/;"	m	class:news_dl::AutoLock
-lock_	condition_variable.hpp	/^        pthread_mutex_t lock_;$/;"	m	class:news_dl::ConditionVariable
-lock_	singleton.hpp	/^  static boost::mutex lock_;$/;"	m	class:Singleton
-lock_	singleton.hpp	/^template <typename T> boost::mutex Singleton<T>::lock_;$/;"	m	class:Singleton
+lock_	condition_variable.hpp	/^        pthread_mutex_t lock_;$/;"	m	class:ConditionVariable
+lock_	singleton.hpp	/^  static std::mutex lock_;$/;"	m	class:Singleton
+lock_	singleton.hpp	/^template <typename T> std::mutex Singleton<T>::lock_;$/;"	m	class:Singleton
+ls	test_data/auc.py	/^ls = sorted(label_score, key=lambda x: x[1], reverse=False)$/;"	v
 main	main.cc	/^int main(int argc, char* argv[]) {$/;"	f
 make_linked_ptr	lib/gtest/include/gtest/internal/gtest-linked_ptr.h	/^linked_ptr<T> make_linked_ptr(T* ptr) {$/;"	f	namespace:testing::internal
 make_tuple	lib/gtest/include/gtest/internal/gtest-tuple.h	/^inline GTEST_10_TUPLE_(T) make_tuple(const T0& f0, const T1& f1, const T2& f2,$/;"	f	namespace:std::tr1
@@ -2169,38 +2153,35 @@ message	lib/gtest/include/gtest/gtest.h	/^  const char* message() const {$/;"	f	
 message_	lib/gtest/include/gtest/gtest-test-part.h	/^  std::string message_;  \/\/ The test failure message.$/;"	m	class:testing::TestPartResult
 message_	lib/gtest/include/gtest/gtest.h	/^  internal::scoped_ptr< ::std::string> message_;$/;"	m	class:testing::AssertionResult
 modelFilePath_	conf.h	/^        std::string modelFilePath_;$/;"	m	class:news_dl::LR::AucCalculationConf
-modelLock_	cal_auc.h	/^        pthread_mutex_t modelLock_;$/;"	m	class:news_dl::LR::AucCalculation
-model_	cal_auc.h	/^        std::tr1::unordered_map<int64_t, float> model_;$/;"	m	class:news_dl::LR::AucCalculation
+modelLock_	cal_auc.h	/^    pthread_mutex_t modelLock_;$/;"	m	class:news_dl::LR::AucCalculation
 mpi	mpi_base.cc	/^namespace news_dl { namespace mpi {$/;"	n	namespace:news_dl	file:
 mpi	mpi_base.h	/^namespace news_dl { namespace mpi {$/;"	n	namespace:news_dl
-mpiPtr_	cal_auc.h	/^        boost::shared_ptr<mpi::MpiBase> mpiPtr_;$/;"	m	class:news_dl::LR::AucCalculation
+mpiPtr_	cal_auc.h	/^    std::shared_ptr<mpi::MpiBase> mpiPtr_;$/;"	m	class:news_dl::LR::AucCalculation
 ms_Singleton	singleton.hpp	/^  static T* ms_Singleton;$/;"	m	class:Singleton
 ms_Singleton	singleton.hpp	/^template <typename T>T* Singleton<T>::ms_Singleton = NULL;$/;"	m	class:Singleton
-mutSendRecv_	mpi_base.h	/^        boost::mutex mutSendRecv_;$/;"	m	class:news_dl::mpi::MpiBase
+mu_	cal_auc.h	/^    std::mutex mu_;$/;"	m	class:news_dl::LR::AucCalculation
+mutSendRecv_	mpi_base.h	/^        std::mutex mutSendRecv_;$/;"	m	class:news_dl::mpi::MpiBase
 mutex_	lib/gtest/include/gtest/gtest.h	/^  mutable internal::Mutex mutex_;$/;"	m	class:testing::UnitTest
 mutex_	lib/gtest/include/gtest/internal/gtest-port.h	/^  Mutex* const mutex_;$/;"	m	class:testing::internal::GTestMutexLock
 mutex_	lib/gtest/include/gtest/internal/gtest-port.h	/^  MutexBase* const mutex_;$/;"	m	class:testing::internal::GTestMutexLock
 mutex_	lib/gtest/include/gtest/internal/gtest-port.h	/^  pthread_mutex_t mutex_;  \/\/ The underlying pthread mutex.$/;"	m	class:testing::internal::MutexBase
 mutex_	lib/gtest/include/gtest/internal/gtest-port.h	/^  pthread_mutex_t mutex_;$/;"	m	class:testing::internal::Notification
-mutex_	thread_safe_queue.hpp	/^        pthread_mutex_t mutex_;$/;"	m	class:news_dl::ThreadSafeQueue
+mutex_	thread_safe_queue.hpp	/^      mutable std::mutex mutex_;$/;"	m	class:ThreadSafeQueue
 myRank_	conf.h	/^        int myRank_;$/;"	m	class:news_dl::LR::AucCalculationConf
 myRank_	mpi_base.h	/^        int myRank_;$/;"	m	class:news_dl::mpi::MpiBase
+n	test_data/auc.py	/^n = 0$/;"	v
 name	lib/gtest/include/gtest/gtest.h	/^  const char* name() const { return name_.c_str(); }$/;"	f	class:testing::TestCase
 name	lib/gtest/include/gtest/gtest.h	/^  const char* name() const { return name_.c_str(); }$/;"	f	class:testing::TestInfo
 name	lib/gtest/include/gtest/internal/gtest-param-util.h	/^      std::string name;$/;"	m	struct:testing::internal::ParameterizedTestCaseInfo::InstantiationInfo
 name_	lib/gtest/include/gtest/gtest.h	/^  const std::string name_;               \/\/ Test name$/;"	m	class:testing::TestInfo
 name_	lib/gtest/include/gtest/gtest.h	/^  std::string name_;$/;"	m	class:testing::TestCase
 name_func	lib/gtest/include/gtest/internal/gtest-param-util.h	/^      ParamNameGeneratorFunc* name_func;$/;"	m	struct:testing::internal::ParameterizedTestCaseInfo::InstantiationInfo
-news_dl	AutoLock.hpp	/^namespace news_dl {$/;"	n
 news_dl	cal_auc.cc	/^namespace news_dl { namespace LR {$/;"	n	file:
 news_dl	cal_auc.h	/^namespace news_dl { namespace LR {$/;"	n
 news_dl	common.h	/^namespace news_dl { namespace LR {$/;"	n
-news_dl	condition_variable.hpp	/^namespace news_dl {$/;"	n
 news_dl	conf.h	/^namespace news_dl { namespace LR {$/;"	n
 news_dl	mpi_base.cc	/^namespace news_dl { namespace mpi {$/;"	n	file:
 news_dl	mpi_base.h	/^namespace news_dl { namespace mpi {$/;"	n
-news_dl	simple_threadpool.hpp	/^namespace news_dl {$/;"	n
-news_dl	thread_safe_queue.hpp	/^namespace news_dl {$/;"	n
 next_	lib/gtest/include/gtest/internal/gtest-linked_ptr.h	/^  mutable linked_ptr_internal const* next_;$/;"	m	class:testing::internal::linked_ptr_internal
 nonClick	common.h	/^    int nonClick;$/;"	m	struct:news_dl::LR::ClickInfo
 nonfatally_failed	lib/gtest/include/gtest/gtest-test-part.h	/^  bool nonfatally_failed() const { return type_ == kNonFatalFailure; }$/;"	f	class:testing::TestPartResult
@@ -2307,6 +2288,7 @@ operator bool	lib/gtest/include/gtest/internal/gtest-internal.h	/^  operator boo
 original_reporter_	lib/gtest/include/gtest/gtest-test-part.h	/^  TestPartResultReporterInterface* original_reporter_;$/;"	m	class:testing::internal::HasNewFatalFailureHelper
 owner_	lib/gtest/include/gtest/internal/gtest-port.h	/^  pthread_t owner_;  \/\/ The thread holding the mutex.$/;"	m	class:testing::internal::MutexBase
 owner_thread_id_	lib/gtest/include/gtest/internal/gtest-port.h	/^  unsigned int owner_thread_id_;$/;"	m	class:testing::internal::Mutex
+p	test_data/auc.py	/^p = 0$/;"	v
 param	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  ParamType param;$/;"	m	struct:testing::TestParamInfo
 param_	lib/gtest/include/gtest/internal/gtest-port.h	/^    const T param_;$/;"	m	class:testing::internal::ThreadWithParam::RunnableImpl
 param_	lib/gtest/include/gtest/internal/gtest-port.h	/^  const T param_;  \/\/ User-supplied parameter to the thread function.$/;"	m	class:testing::internal::ThreadWithParam
@@ -2323,14 +2305,13 @@ pointer	lib/gtest/include/gtest/internal/gtest-port.h	/^  T* pointer() { return 
 pointer	lib/gtest/include/gtest/internal/gtest-port.h	/^  T* pointer() { return GetOrCreateValue(); }$/;"	f	class:testing::internal::ThreadLocal
 pointer	lib/gtest/include/gtest/internal/gtest-port.h	/^  const T* pointer() const { return &value_; }$/;"	f	class:testing::internal::ThreadLocal
 pointer	lib/gtest/include/gtest/internal/gtest-port.h	/^  const T* pointer() const { return GetOrCreateValue(); }$/;"	f	class:testing::internal::ThreadLocal
-pool_	cal_auc.h	/^        ThreadPool pool_;$/;"	m	class:news_dl::LR::AucCalculation
+pool_	cal_auc.h	/^    ThreadPool pool_;$/;"	m	class:news_dl::LR::AucCalculation
 posix	lib/gtest/include/gtest/internal/gtest-port.h	/^namespace posix {$/;"	n	namespace:testing::internal
-private	test.h	13;"	d
-protected	test.h	12;"	d
 proto2	lib/gtest/include/gtest/internal/gtest-internal.h	/^namespace proto2 { class Message; }$/;"	n
 ptr_	lib/gtest/include/gtest/internal/gtest-port.h	/^  T* ptr_;$/;"	m	class:testing::internal::scoped_ptr
-public	test.h	11;"	d
-queue_	simple_threadpool.hpp	/^        ThreadSafeQueue<boost::function<void()> > queue_;$/;"	m	class:news_dl::ThreadPool
+queue_	simple_threadpool.hpp	/^        ThreadSafeQueue<std::function<void()>> queue_;$/;"	m	class:ThreadPool
+randFloat	rand.py	/^def randFloat():$/;"	f
+random	rand.py	/^import random$/;"	i
 reference	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  typedef const T& reference;$/;"	t	class:testing::internal::ParamIterator
 registered_	lib/gtest/include/gtest/internal/gtest-internal.h	/^  bool registered_;$/;"	m	class:testing::internal::TypedTestCasePState
 registered_tests_	lib/gtest/include/gtest/internal/gtest-internal.h	/^  RegisteredTestsMap registered_tests_;$/;"	m	class:testing::internal::TypedTestCasePState
@@ -2368,11 +2349,13 @@ step_	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  const IncrementT s
 string	lib/gtest/include/gtest/internal/gtest-filepath.h	/^  const std::string& string() const { return pathname_; }$/;"	f	class:testing::internal::FilePath
 string	lib/gtest/include/gtest/internal/gtest-port.h	/^typedef ::std::string string;$/;"	t	namespace:testing::internal
 string	lib/gtest/include/gtest/internal/gtest-port.h	/^typedef ::string string;$/;"	t	namespace:testing::internal
+su	test_data/auc.py	/^su = 0.0$/;"	v
 substr_	lib/gtest/include/gtest/gtest-spi.h	/^  const string substr_;$/;"	m	class:testing::internal::SingleFailureChecker
 success_	lib/gtest/include/gtest/gtest.h	/^  bool success_;$/;"	m	class:testing::AssertionResult
 summary	lib/gtest/include/gtest/gtest-test-part.h	/^  const char* summary() const { return summary_.c_str(); }$/;"	f	class:testing::TestPartResult
 summary_	lib/gtest/include/gtest/gtest-test-part.h	/^  std::string summary_;  \/\/ The test failure summary.$/;"	m	class:testing::TestPartResult
 swap	lib/gtest/include/gtest/internal/gtest-port.h	/^  friend void swap(scoped_ptr& a, scoped_ptr& b) {$/;"	f	class:testing::internal::scoped_ptr
+sys	test_data/auc.py	/^import sys$/;"	i
 tear_down_tc_	lib/gtest/include/gtest/gtest.h	/^  Test::TearDownTestCaseFunc tear_down_tc_;$/;"	m	class:testing::TestCase
 test_	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^    DeathTest* const test_;$/;"	m	class:testing::internal::DeathTest::ReturnSentinel
 test_base_name	lib/gtest/include/gtest/internal/gtest-param-util.h	/^    const string test_base_name;$/;"	m	struct:testing::internal::ParameterizedTestCaseInfo::TestInfo
@@ -2412,7 +2395,7 @@ tests_	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  TestInfoContainer
 thread_	lib/gtest/include/gtest/internal/gtest-port.h	/^  AutoHandle thread_;$/;"	m	class:testing::internal::ThreadWithParamBase
 thread_	lib/gtest/include/gtest/internal/gtest-port.h	/^  pthread_t thread_;  \/\/ The native thread object.$/;"	m	class:testing::internal::ThreadWithParam
 thread_can_start_	lib/gtest/include/gtest/internal/gtest-port.h	/^  Notification* const thread_can_start_;$/;"	m	class:testing::internal::ThreadWithParam
-threads_	simple_threadpool.hpp	/^        std::vector<boost::thread*> threads_;$/;"	m	class:news_dl::ThreadPool
+threads_	simple_threadpool.hpp	/^        std::vector<std::thread> threads_;$/;"	m	class:ThreadPool
 totalRank_	conf.h	/^        int totalRank_;$/;"	m	class:news_dl::LR::AucCalculationConf
 totalRank_	mpi_base.h	/^        int totalRank_;$/;"	m	class:news_dl::mpi::MpiBase
 tr1	lib/gtest/include/gtest/internal/gtest-port.h	/^namespace tr1 {$/;"	n	namespace:std
@@ -2581,7 +2564,6 @@ type_param	lib/gtest/include/gtest/gtest.h	/^  const char* type_param() const {$
 type_param_	lib/gtest/include/gtest/gtest.h	/^  const internal::scoped_ptr<const ::std::string> type_param_;$/;"	m	class:testing::TestCase
 type_param_	lib/gtest/include/gtest/gtest.h	/^  const internal::scoped_ptr<const ::std::string> type_param_;$/;"	m	class:testing::TestInfo
 u_	lib/gtest/include/gtest/internal/gtest-internal.h	/^  FloatingPointUnion u_;$/;"	m	class:testing::internal::FloatingPoint
-uid	common.h	/^    char uid[20];$/;"	m	struct:news_dl::LR::Instance
 v10_	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  const T10 v10_;$/;"	m	class:testing::internal::ValueArray10
 v10_	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  const T10 v10_;$/;"	m	class:testing::internal::ValueArray11
 v10_	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  const T10 v10_;$/;"	m	class:testing::internal::ValueArray12
@@ -3890,14 +3872,13 @@ value_type	lib/gtest/include/gtest/internal/gtest-internal.h	/^  typedef Element
 value_type	lib/gtest/include/gtest/internal/gtest-param-util.h	/^  typedef T value_type;$/;"	t	class:testing::internal::ParamIterator
 value_type	lib/gtest/include/gtest/internal/gtest-port.h	/^  typedef T value_type;$/;"	t	struct:testing::internal::IteratorTraits
 value_type	lib/gtest/include/gtest/internal/gtest-port.h	/^  typedef typename Iterator::value_type value_type;$/;"	t	struct:testing::internal::IteratorTraits
-weight	common.h	/^    float weight;$/;"	m	struct:news_dl::LR::Instance
 worker_send_pctr_to_master	mpi_base.h	/^    worker_send_pctr_to_master = 1,$/;"	e	enum:news_dl::mpi::MsgTag
 write_fd	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^  int write_fd() const { return write_fd_; }$/;"	f	class:testing::internal::InternalRunDeathTestFlag
 write_fd_	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^  int write_fd_;$/;"	m	class:testing::internal::InternalRunDeathTestFlag
 wstring	lib/gtest/include/gtest/internal/gtest-port.h	/^typedef ::std::wstring wstring;$/;"	t	namespace:testing::internal
 wstring	lib/gtest/include/gtest/internal/gtest-port.h	/^typedef ::wstring wstring;$/;"	t	namespace:testing::internal
+zoneRand	rand.py	/^def zoneRand():$/;"	f
 ~AucCalculation	cal_auc.cc	/^AucCalculation::~AucCalculation() {$/;"	f	class:news_dl::LR::AucCalculation
-~AutoLock	AutoLock.hpp	/^        ~AutoLock() {$/;"	f	class:news_dl::AutoLock
 ~CartesianProductGenerator10	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  virtual ~CartesianProductGenerator10() {}$/;"	f	class:testing::internal::CartesianProductGenerator10
 ~CartesianProductGenerator2	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  virtual ~CartesianProductGenerator2() {}$/;"	f	class:testing::internal::CartesianProductGenerator2
 ~CartesianProductGenerator3	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  virtual ~CartesianProductGenerator3() {}$/;"	f	class:testing::internal::CartesianProductGenerator3
@@ -3907,7 +3888,7 @@ wstring	lib/gtest/include/gtest/internal/gtest-port.h	/^typedef ::wstring wstrin
 ~CartesianProductGenerator7	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  virtual ~CartesianProductGenerator7() {}$/;"	f	class:testing::internal::CartesianProductGenerator7
 ~CartesianProductGenerator8	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  virtual ~CartesianProductGenerator8() {}$/;"	f	class:testing::internal::CartesianProductGenerator8
 ~CartesianProductGenerator9	lib/gtest/include/gtest/internal/gtest-param-util-generated.h	/^  virtual ~CartesianProductGenerator9() {}$/;"	f	class:testing::internal::CartesianProductGenerator9
-~ConditionVariable	condition_variable.hpp	/^        ~ConditionVariable() {$/;"	f	class:news_dl::ConditionVariable
+~ConditionVariable	condition_variable.hpp	/^        ~ConditionVariable() {$/;"	f	class:ConditionVariable
 ~DeathTest	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^  virtual ~DeathTest() { }$/;"	f	class:testing::internal::DeathTest
 ~DeathTestFactory	lib/gtest/include/gtest/internal/gtest-death-test-internal.h	/^  virtual ~DeathTestFactory() { }$/;"	f	class:testing::internal::DeathTestFactory
 ~Environment	lib/gtest/include/gtest/gtest.h	/^  virtual ~Environment() {}$/;"	f	class:testing::Environment
@@ -3945,8 +3926,8 @@ wstring	lib/gtest/include/gtest/internal/gtest-port.h	/^typedef ::wstring wstrin
 ~ThreadLocal	lib/gtest/include/gtest/internal/gtest-port.h	/^  ~ThreadLocal() {$/;"	f	class:testing::internal::ThreadLocal
 ~ThreadLocalBase	lib/gtest/include/gtest/internal/gtest-port.h	/^  virtual ~ThreadLocalBase() {}$/;"	f	class:testing::internal::ThreadLocalBase
 ~ThreadLocalValueHolderBase	lib/gtest/include/gtest/internal/gtest-port.h	/^  virtual ~ThreadLocalValueHolderBase() {}$/;"	f	class:testing::internal::ThreadLocalValueHolderBase
-~ThreadPool	simple_threadpool.hpp	/^        ~ThreadPool() {$/;"	f	class:news_dl::ThreadPool
-~ThreadSafeQueue	thread_safe_queue.hpp	/^        ~ThreadSafeQueue() {$/;"	f	class:news_dl::ThreadSafeQueue
+~ThreadPool	simple_threadpool.hpp	/^        ~ThreadPool() {$/;"	f	class:ThreadPool
+~ThreadSafeQueue	thread_safe_queue.hpp	/^      ~ThreadSafeQueue() {$/;"	f	class:ThreadSafeQueue
 ~ThreadWithParam	lib/gtest/include/gtest/internal/gtest-port.h	/^  virtual ~ThreadWithParam() {}$/;"	f	class:testing::internal::ThreadWithParam
 ~ThreadWithParam	lib/gtest/include/gtest/internal/gtest-port.h	/^  ~ThreadWithParam() { Join(); }$/;"	f	class:testing::internal::ThreadWithParam
 ~ThreadWithParamBase	lib/gtest/include/gtest/internal/gtest-port.h	/^  virtual ~ThreadWithParamBase() {}$/;"	f	class:testing::internal::ThreadWithParamBase
