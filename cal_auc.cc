@@ -64,18 +64,15 @@ void AucCalculation::LoadPredictionData(FILE* file_pointer, std::atomic<int>* co
   char buf[1024];
   while (fgets(buf, sizeof(buf), file_pointer)) {
     sscanf(buf, "%d\t%f", &label, &score);
-    score = 1.0 / (1 + exp(-score));
     const int binNum = conf->GetBinNum();
     int rank;
     if (score == 1) rank = binNum - 1;
     else rank = score * binNum;
-    mu_.lock();
     if (label == 1) {
       ctrClickInfo_->info[rank].Click += 1;
     } else {
       ctrClickInfo_->info[rank].nonClick += 1;
     }
-    mu_.unlock();
   }
   fclose(file_pointer);
   ++(*counter);
@@ -143,7 +140,7 @@ float AucCalculation::CalculateAuc() {
         const ClickInfo& info = ctrClickInfoBuffer_->info[i];
         clickSum += info.Click;
         nclickSum += info.nonClick;
-        aucResult += 1.0 * nclickSum * info.Click + 1.0 * clickSum * info.nonClick / 2.0;
+        aucResult += nclickSum * info.Click + info.Click * info.nonClick / 2.0;
     }
     return aucResult / (clickSum * nclickSum);
 }
