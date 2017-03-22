@@ -87,6 +87,7 @@ bool AucCalculation::Run(const std::string& filepath) {
       std::cout << base_string::StringPrintf("subfiles[%d]=%s\n", i, subfiles[i].c_str());
       FILE* f = fopen(subfiles[i].c_str(), "r");
 
+      fclose(fopen("testfile.xxx", "w"));
       this->pool_.Submit(std::bind(&AucCalculation::LoadPredictionData, this, f, &counter));
       // this->LoadPredictionData(f, &counter);
       // this->Prediction(subfiles[i], &counter);

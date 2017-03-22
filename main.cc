@@ -5,18 +5,21 @@
 #include "cal_auc.h"
 #include "mpi_base.h"
 
-DEFINE_string(data_path, "", "test data directory");
-DEFINE_int32(bin_number, 1000, "split bin numbers");
-DEFINE_int32(master_index, 0, "master index");
+//DEFINE_string(data_path, "", "test data directory");
+//DEFINE_int32(bin_number, 1000, "split bin numbers");
+//DEFINE_int32(master_index, 0, "master index");
 
 using namespace news_dl;
 using namespace LR;
 using namespace mpi;
 
 int main(int argc, char* argv[]) {
-    google::ParseCommandLineFlags(&argc, &argv, true);
-    google::InitGoogleLogging(argv[0]);
-    AucCalculationConf* conf = AucCalculationConf::GetSingletonPtr()
+ // google::ParseCommandLineFlags(&argc, &argv, true);
+ // google::InitGoogleLogging(argv[0]);
+   int FLAGS_bin_number = 1000;
+   int FLAGS_master_index = 0;
+   std::string FLAGS_data_path = "./test_data/";
+   AucCalculationConf* conf = AucCalculationConf::GetSingletonPtr()
                 ->SetBinNum(FLAGS_bin_number)
                 ->SetMasterIdx(FLAGS_master_index)
                 ->SetScoreFilePath(FLAGS_data_path);
